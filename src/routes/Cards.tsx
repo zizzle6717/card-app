@@ -37,7 +37,7 @@ export class CardsComponent extends React.Component<any, any> {
                     <div className="cards-container">
                         {
                             cardIds.map((id: string) => (
-                                <Card key={id} card={null}/>
+                                <Card key={id} id={id} />
                             ))
                         }
                     </div>

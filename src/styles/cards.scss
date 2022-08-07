@@ -7,6 +7,21 @@
     .card-container {
         width: 400px;
         margin-bottom: 1rem;
+        position: relative;
+
+        .image-container {
+            position: relative;
+            transition: opacity 250ms linear;
+            opacity: 1;
+            visibility: visible;
+
+            &.hidden {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s 250ms, opacity 250ms linear;
+            }
+        }
         
         img {
             width: 100%;
