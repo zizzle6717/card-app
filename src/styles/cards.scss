@@ -1,3 +1,6 @@
+$text-color-yellow: rgb(250 203 143);
+$text-opacity: .75;
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -8,18 +11,136 @@
         width: 400px;
         margin-bottom: 1rem;
         position: relative;
+        color: $text-color-yellow;
 
         .image-container {
             position: relative;
             transition: opacity 250ms linear;
             opacity: 1;
             visibility: visible;
+            overflow: hidden;
+            border-radius: 1.125rem;
 
             &.hidden {
                 position: absolute;
                 visibility: hidden;
                 opacity: 0;
                 transition: visibility 0s 250ms, opacity 250ms linear;
+            }
+
+            .player-image {
+                position: absolute;
+                left: -6%;
+                top: 5%;
+                width: 112%;
+            }
+
+            .footer-image {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 0;
+                width: 90%;
+                margin: 8% 5%;
+                box-sizing: border-box;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                .header-right,
+                .header-left {
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .header-left {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .season-text {
+                        opacity: $text-opacity;
+                    }
+
+                    .edition-name {
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+                }
+
+                .header-right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    .team-image {
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        margin-bottom: .75rem;
+                    }
+
+                    .grade-text {
+                        opacity: $text-opacity;
+                    }
+                }
+            }
+
+            .footer-gradient {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                bottom: 0;
+                height: 45%;
+                width: 100%;
+                position: absolute;
+                background-image: linear-gradient(0deg, black, rgb(0 0 0 / 74%), rgb(0 0 0 / 0%));
+                padding-top: 5%;
+                box-sizing: border-box;
+
+                &.alt-blue {
+                    background-image: linear-gradient(0deg, #131727, rgb(29 55 72 / 85%), rgba(0, 0, 0, 0));
+                }
+
+                .player-name {
+                    font-size: 2.75rem;
+                    font-weight: 600;
+                    width: 100%;
+                    padding: 0 4rem;
+                    box-sizing: border-box;
+
+                    p {
+                        margin: .25rem 0;
+                    }
+                }
+
+                .player-details-container {
+                    display: flex;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+
+                    .details-group {
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1 1;
+                        justify-content: center;
+                        align-items: center;
+
+                        .details-header {
+                            text-transform: uppercase;
+                            opacity: $text-opacity - .25;
+                        }
+
+                        p {
+                            margin: .5rem 0;
+                        }
+                    }
+                }
             }
         }
         
